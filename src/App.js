@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import {Switch,Route} from 'react-router-dom';
+import {Switch,Route,Redirect} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
 import Skill from './components/Skill';
@@ -23,6 +23,9 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
+        <Route exact path = "/" >
+          <Redirect to="/my-portfolio" />
+        </Route>
         <Route exact path="/my-portfolio" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
